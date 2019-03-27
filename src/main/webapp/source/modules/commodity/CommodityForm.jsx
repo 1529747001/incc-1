@@ -57,7 +57,19 @@ class CommodityForm extends React.Component {
         this.props.form.resetFields();
         //this.props.dispatch(userCriteriaChanged());
     }
-
+//---------------------------------------------
+    handleSubmit_1() {
+    
+        alert('wqs')
+        let rows = this.props.form.getFieldsValue();
+        const {company} = rows; 
+        
+     
+        alert(company.name1)
+        
+    }
+    
+//---------------------------------------------
     handleSubmit() {
         E.addOneTimeEventListener("tocommoditylist",  (e) => {
             this.props.history.push('/manager/commodity/list/1');
@@ -110,6 +122,13 @@ class CommodityForm extends React.Component {
     }
 
     render() {
+    	var styles={
+    		position:'absolute'
+    	}
+    
+       
+    
+    
         const {getFieldDecorator} = this.props.form;
         const {selectedCommodity:{id, name, category, industry, pic, company, factory, brand}} = this.props;
         let cBusinessBegin = company?moment(company.businessBegin):moment();
@@ -413,6 +432,27 @@ class CommodityForm extends React.Component {
                     )}
                     <div style={{backgroundColor: "#f5f5f5"}}>
                         <br/>
+                    
+                     <FormItem 
+                        {...formItemLayout}
+                        label="企业名称或企业信用代码"
+                        hasFeedback
+                    >
+                        {getFieldDecorator('company.name1', {
+                            validateTrigger: ['onChange', 'onBlur'],
+                            rules: [{
+                                required: true,
+                                whitespace: false,
+                                message: "请输入企业名称或企业信用代码",
+                            }],
+                            initialValue: company.name,
+                        })(
+                            <Input placeholder="企业名称或企业信用代码"/>
+                        )}
+                      
+                    	 <Button type="primary" htmlType="button" size="large" style={styles}
+                                onClick={() => this.handleSubmit_1()}>一键填充</Button>
+                    </FormItem>
                     <FormItem
                         {...formItemLayout}
                         label="企业名称"
@@ -423,7 +463,7 @@ class CommodityForm extends React.Component {
                             rules: [{
                                 required: true,
                                 whitespace: false,
-                                message: "请输入企业名称.",
+                                message: "请输入企业名称",
                             }],
                             initialValue: company.name,
                         })(
@@ -728,6 +768,26 @@ class CommodityForm extends React.Component {
                     })(
                         <Input type="hidden"/>
                     )}
+                     <FormItem 
+                        {...formItemLayout}
+                        label="企业名称或企业信用代码"
+                        hasFeedback
+                    >
+                        {getFieldDecorator('company.name', {
+                            validateTrigger: ['onChange', 'onBlur'],
+                            rules: [{
+                                required: true,
+                                whitespace: false,
+                                message: "请输入企业名称或企业信用代码",
+                            }],
+                            initialValue: company.name,
+                        })(
+                            <Input placeholder="企业名称或企业信用代码"/>
+                        )}
+                      
+                    	 <Button type="primary" htmlType="button" size="large" style={styles}
+                                onClick={() => this.handleSubmit_2()}>一键填充</Button>
+                    </FormItem>
                     <FormItem
                         {...formItemLayout}
                         label="企业名称"
@@ -744,6 +804,7 @@ class CommodityForm extends React.Component {
                         })(
                             <Input placeholder="企业名称"/>
                         )}
+                        
                     </FormItem>
                     <Row><Col span={12}>
                         <FormItem
