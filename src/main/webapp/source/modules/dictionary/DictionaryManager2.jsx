@@ -9,7 +9,7 @@ import DictionarySearch from './DictionarySearch';
 /**
  * Dictionary:  YANGHUI
  * Date: 20190327.
- * Time: 上午10:26.
+ * Time: 上午  09:42.
  */
 class DictionaryManager2 extends React.Component {
     constructor(props) {
