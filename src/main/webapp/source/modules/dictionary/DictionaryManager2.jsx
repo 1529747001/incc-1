@@ -7,8 +7,8 @@ import DictionaryList2 from './DictionaryList2';
 import DictionarySearch from './DictionarySearch';
 
 /**
- * Dictionary: zyj
- * Date: 16/7/19.
+ * Dictionary:  YANGHUI
+ * Date: 20190327.
  * Time: 上午10:26.
  */
 class DictionaryManager2 extends React.Component {
