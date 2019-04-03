@@ -4,6 +4,12 @@ import {receiveOtherQualificationList} from './OtherQualificationActions';
 export const RECEIVE_COMMODITY_LIST = 'RECEIVE_COMMODITY_LIST';
 export const SELECT_COMMODITY = 'SELECT_COMMODITY';
 export const ADD_COMMODITY = 'ADD_COMMODITY';
+
+
+export const NEW_A = 'NEW_A';
+
+
+
 // export const CHANGE_COMMODITY_PIC = 'CHANGE_COMMODITY_PIC';
 export const COMMODITY_CRITERIA_CHANGED = 'COMMODITY_CRITERIA_CHANGED';
 export const ALL_COMMODITY_OPTIONS = 'ALL_COMMODITY_OPTIONS';
@@ -51,7 +57,7 @@ export function saveCommodity(commodity) {
 
         E.addOneTimeEventListener("commodity", function (e) {
             if(e.data.returnCode == "200"){
-                const commodity = {name: "", category: "", industry:"", pic:"", company:{}, factory:{}, brand:"",otherQualifications:[],specialItems:[]}
+                const commodity = {name: "", category: "", industry:"", pic:"",video:"", company:{}, factory:{}, brand:"",otherQualifications:[],specialItems:[]}
                 dispatch(selectCommodity(commodity));
                 E.dispatchEvent("tocommoditylist");
             } else {
@@ -101,7 +107,7 @@ export function getCommodity(id) {
         }
     } else {
         return dispatch => {
-            const commodity = {name: "", category: "", industry:"", pic:"", company:{}, factory:{}, brand:"",otherQualifications:[],specialItems:[]}
+            const commodity = {name: "", category: "", industry:"", pic:"",video:"", company:{}, factory:{}, brand:"",otherQualifications:[],specialItems:[]}
             dispatch(selectCommodity(commodity));
             const {specialItems} = commodity;
             dispatch(receiveSpecialItemList(specialItems));

@@ -28,8 +28,7 @@ class ImgUpload extends React.Component {
         this.state = {
             imageUrl:null
         }
-    // const value = this.props.value || {};
-
+    
     };
     handleChange = (info) => {
         if (info.file.status === 'done') {

@@ -20,21 +20,21 @@ class DictionaryManager2 extends React.Component {
         this.props.dispatch(refreshDictionaryList());
     }
 
-    view(id){
-        this.history.push('/manager/dictionary/detail/'+ id);
-    }
+    //view(id){
+        //this.history.push('/manager/dictionary/detail/'+ id);
+    //}
 
-    add(){
-        this.history.push('/manager/dictionary/form');
-    }
+    //add(){
+        //this.history.push('/manager/dictionary/form');
+    //}
 
-    edit(id){
-        this.history.push('/manager/dictionary/form/'+ id);
-    }
+    //edit(id){
+        //this.history.push('/manager/dictionary/form/'+ id);
+    //}
 
-    delete(id){
-        this.props.dispatch(refreshDictionaryList(id));
-    }
+    //delete(id){
+       // this.props.dispatch(refreshDictionaryList(id));
+    //}
 
     render() {
 
@@ -46,11 +46,11 @@ class DictionaryManager2 extends React.Component {
                             <DictionarySearch {...this.props} onAdd={this.add}/>
                         </Col>
                     </Row>
-                    <Row gutter={16}>
+                   {/*<Row gutter={16}>
                         <Col>
                             <DictionaryList2 {...this.props}  onEdit={this.edit} onView={this.view} onDelete={this.delete}/>
                         </Col>
-                    </Row>
+                    </Row>*/}
                 </SubPage>
             </div>
         )
