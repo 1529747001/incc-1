@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="incc-1:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>incc-1</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="incc-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="incc-1:war exploded" />
+    </root>
+  </artifact>
+</component>
